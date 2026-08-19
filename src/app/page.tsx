@@ -79,7 +79,7 @@ export default function App() {
     switch (page) {
       case 'home':         return <HomePage settings={settings} onNav={goTo}/>
       case 'products':     return <ProductsPage cats={cats}/>
-      case 'technology':   return <TechPage settings={settings}/>
+      case 'technology':   return <TechPage/>
       case 'about':        return <AboutPage settings={settings}/>
       case 'references':   return <RefsPage/>
       case 'contact':      return <ContactPage settings={settings}/>
