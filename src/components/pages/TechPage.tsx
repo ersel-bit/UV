@@ -25,7 +25,7 @@ export default function TechPage() {
                 height:'100%',
                 objectFit:'cover',
                 border:'none',
-                pointerEvents: 'none'
+                pointerEvents:'none'
               }}
             />
           </div>
