@@ -1,22 +1,37 @@
 'use client'
 import { PageHero } from '@/components/ui'
-import type { SiteSettings } from '@/types'
 
-export default function TechPage({ settings }: { settings:SiteSettings }) {
+export default function TechPage() {
   return (
     <div style={{marginTop:58}}>
       <PageHero tag="Technology" title="How UVC Disinfection Works"/>
-      {settings.technology_intro_video_id && (
-        <div style={{background:'#050f1a'}}>
-          <div style={{maxWidth:980,margin:'0 auto',padding:'32px 32px 0'}}>
-            <div style={{position:'relative',paddingBottom:'56.25%',height:0,overflow:'hidden',borderRadius:2,border:'1px solid rgba(0,204,238,.15)'}}>
-              <iframe src={`https://www.youtube.com/embed/${settings.technology_intro_video_id}?rel=0&modestbranding=1`}
-                style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',border:'none'}}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
-            </div>
+
+      <div style={{background:'#050f1a'}}>
+        <div style={{maxWidth:980,margin:'0 auto',padding:'32px 32px 0'}}>
+          <div style={{position:'relative',paddingBottom:'56.25%',height:0,overflow:'hidden',borderRadius:2,border:'1px solid rgba(0,204,238,.15)'}}>
+            <video
+              src="/technology-video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={false}
+              preload="auto"
+              style={{
+                position:'absolute',
+                top:0,
+                left:0,
+                width:'100%',
+                height:'100%',
+                objectFit:'cover',
+                border:'none'
+                pointerEvents: 'none'
+              }}
+            />
           </div>
         </div>
-      )}
+      </div>
+
       <div style={{maxWidth:980,margin:'0 auto',padding:'44px 32px'}}>
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:48,marginBottom:52}}>
           <div>
@@ -27,6 +42,7 @@ export default function TechPage({ settings }: { settings:SiteSettings }) {
               <p key={i} style={{color:'#6a8aaa',fontSize:14,lineHeight:1.8,marginBottom:12}}>{t}</p>
             ))}
           </div>
+
           <div style={{background:'#091828',border:'1px solid rgba(0,204,238,.12)',padding:26,borderRadius:2}}>
             <div style={{fontFamily:'Rajdhani,sans-serif',fontSize:18,fontWeight:600,color:'#00ccee',marginBottom:18}}>Germicidal UV Spectrum</div>
             {[['Vacuum UV','100–200 nm','Research',false],['UV-C ★','200–280 nm','Germicidal',true],['UV-B','280–315 nm','Sunburn',false],['UV-A','315–400 nm','Near-visible',false]].map(([n,r,note,a])=>(
@@ -39,8 +55,13 @@ export default function TechPage({ settings }: { settings:SiteSettings }) {
             ))}
           </div>
         </div>
+
         <h2 style={{fontFamily:'Rajdhani,sans-serif',fontSize:34,fontWeight:700,marginBottom:14}}>UV Dose Validation</h2>
-        <p style={{color:'#6a8aaa',fontSize:14,lineHeight:1.8,marginBottom:20}}>Every UVTechnic water system is validated to deliver a minimum <b style={{color:'#eaf4ff'}}>400 J/m²</b> under worst-case conditions: 60% end-of-life lamp output and 70% minimum UV transmittance.</p>
+
+        <p style={{color:'#6a8aaa',fontSize:14,lineHeight:1.8,marginBottom:20}}>
+          Every UVTechnic water system is validated to deliver a minimum <b style={{color:'#eaf4ff'}}>400 J/m²</b> under worst-case conditions: 60% end-of-life lamp output and 70% minimum UV transmittance.
+        </p>
+
         <div style={{background:'#091828',border:'1px solid rgba(0,204,238,.12)',padding:26,borderRadius:2}}>
           {[['Step 1','Reactor geometry','Inner diameter × lamp length → projected irradiation area'],
             ['Step 2','Contact time','Internal volume ÷ flow rate → exposure time (s)'],
