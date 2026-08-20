@@ -51,17 +51,29 @@ export default function AboutPage({ settings:s }: { settings:SiteSettings }) {
             </div>
           </div>
         </div>
+
         <div style={{marginTop:56}}>
           <SectionTag>Production & Manufacturing</SectionTag>
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:16}}>
-            {[['SM Series — Wiper Machining','N44mSWUCo9M','56.25%'],['SM Series — Wiper in Operation','akFBo-HTqA0','56.25%'],['SS316 Vessel Welding','EdZHfB5KEBU','177.78%']].map(([title,vid,ratio])=>(
-              <div key={vid}>
-                <div style={{fontSize:12,color:'#00ccee',letterSpacing:1,textTransform:'uppercase',fontWeight:600,marginBottom:8}}>{title}</div>
-                <div style={{position:'relative',paddingBottom:ratio,height:0,overflow:'hidden',borderRadius:2,border:'1px solid rgba(0,204,238,.12)'}}>
-                  <iframe src={`https://www.youtube.com/embed/${vid}?rel=0&modestbranding=1`} style={{position:'absolute',top:0,left:0,width:'100%',height:'100%',border:'none'}} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/>
-                </div>
-              </div>
-            ))}
+          <div style={{position:'relative',paddingBottom:'56.25%',height:0,overflow:'hidden',borderRadius:2,border:'1px solid rgba(0,204,238,.12)'}}>
+            <video
+              src="/about-manufacturing.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={false}
+              preload="auto"
+              style={{
+                position:'absolute',
+                top:0,
+                left:0,
+                width:'100%',
+                height:'100%',
+                objectFit:'cover',
+                border:'none',
+                pointerEvents:'none'
+              }}
+            />
           </div>
         </div>
       </div>
