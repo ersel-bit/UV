@@ -22,8 +22,9 @@ export default function AdminLogin() {
       } else {
         router.push('/admin/dashboard')
       }
-    } catch {
-      setError('Supabase not configured yet. Add your .env.local credentials.')
+    } catch (err: any) {
+  console.error('LOGIN ERROR:', err)
+  setError(err?.message || 'Unknown error')
     }
     setLoading(false)
   }
