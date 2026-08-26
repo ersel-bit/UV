@@ -56,7 +56,15 @@ export interface ProductImage {
   alt_text: string; caption: string; sort_order: number; is_active: boolean
 }
 export interface Reference {
-  id: string; company_name: string; sector: string; description: string; sort_order: number; is_active: boolean
+
+  id: string
+  company_name: string
+  sector: string
+  description: string
+  image_url: string
+  sort_order: number
+  is_active: boolean
+
 }
 export interface TradeEvent {
   id: string; title: string; location: string; event_date: string
