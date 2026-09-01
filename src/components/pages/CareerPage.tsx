@@ -17,7 +17,9 @@ export default function CareerPage() {
             <p style={{color:'#6a8aaa',fontSize:14,lineHeight:1.85,marginBottom:14}}>UVTechnic started with a simple conviction: Turkey didn't need to import European technology — it could build it. Eight years and 300+ installed systems later, our 2,500 m² İzmir facility now fabricates, tests, and ships UVC disinfection systems that meet the same standards as manufacturers in Germany or Denmark.</p>
             <p style={{color:'#6a8aaa',fontSize:14,lineHeight:1.85}}>The next chapter is bigger: deeper certification, expansion into MENA and the Gulf, and continued investment in the people who actually build the systems.</p>
           </div>
-          <div style={{background:'repeating-linear-gradient(135deg,rgba(0,204,238,.04),rgba(0,204,238,.04) 10px,rgba(0,204,238,.08) 10px,rgba(0,204,238,.08) 20px)',border:'1px dashed rgba(0,204,238,.2)',borderRadius:2,height:300,display:'flex',alignItems:'center',justifyContent:'center',color:'#6a8aaa',fontSize:13}}>Career / Team Photo</div>
+          <div style={{height:300,borderRadius:2,overflow:'hidden',border:'1px solid rgba(0,204,238,.18)',background:'#050f1a'}}>
+            <img src="/career-application.jpeg" alt="UVTechnic Career Application" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+          </div>
         </div>
         <div style={{fontSize:10,letterSpacing:3,textTransform:'uppercase',color:'#00ccee',fontWeight:600,marginBottom:10}}>Open Application</div>
         <h2 style={{fontFamily:'Rajdhani,sans-serif',fontSize:30,fontWeight:700,marginBottom:10}}>Tell Us About Yourself</h2>
